@@ -1,5 +1,86 @@
-import { Github, Linkedin, Mail } from "lucide-react";
-import { Download } from "lucide-react";
+"use client";
+import { Github, Linkedin, Mail, Download } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+  DialogClose,
+} from "@/components/ui/dialog";
+import React from "react";
+
+interface Project {
+  name: string;
+  description: string;
+  stack: string[];
+  image: string;
+  githubLink: string;
+}
+
+const projects: Project[] = [
+  {
+    name: "Portfólio Web - 2024",
+    description:
+      "Portfólio pessoal, criado com NextJS e TailwindCSS para estilização, além do uso do shadcn/UI para componentizar alguns elementos.",
+    stack: ["NextJS", "TailwindCSS", "Shadcn/UI"],
+    image: "https://i.imgur.com/cG5ySfO.jpeg",
+    githubLink: "https://github.com/matalvesdev/portifolio-web",
+  },
+];
+
+interface ProjectDialogProps {
+  project: Project;
+}
+
+const ProjectDialog: React.FC<ProjectDialogProps> = ({ project }) => (
+  <Dialog>
+    <DialogTrigger asChild>
+      <a href="#" className="project-link">
+        <img
+          src={project.image}
+          alt={`${project.name}`}
+          className="w-110 h-96 cursor-pointer transition-transform transform hover:scale-105"
+        />
+      </a>
+    </DialogTrigger>
+    <DialogContent className="p-6 rounded-lg shadow-lg bg-white max-w-lg mx-auto">
+      <DialogHeader className="mb-2 border-b border-gray-200 pb-2">
+        <DialogTitle className="text-2xl font-bold text-gray-800 mb-4">
+          {project.name}
+        </DialogTitle>
+        <DialogDescription className="text-gray-600 text-lg">
+          {project.description}
+        </DialogDescription>
+      </DialogHeader>
+      <div>
+        <h4 className="font-semibold text-lg text-gray-800 mb-2">
+          Stack Usada:
+        </h4>
+        <ul className="list-disc list-inside text-gray-700">
+          {project.stack.map((tech: string, index: number) => (
+            <li key={index} className="pl-1">
+              {tech}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className="flex justify-end mt-4">
+        <a
+          href={project.githubLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="py-2 px-4 bg-black text-white rounded-lg hover:bg-slate-900 transition duration-300 flex items-center justify-center"
+        >
+          Ver no GitHub
+        </a>
+      </div>
+    </DialogContent>
+  </Dialog>
+);
+
+
 
 export default function Home() {
   return (
@@ -7,27 +88,27 @@ export default function Home() {
       <div className="bg-white w-auto">
         <header className="flex justify-between items-center px-8 md:px-64 py-2 bg-inherit w-[1920px] h-[128px] fixed">
           <div className="text-3xl">
-            <a href="/" className="text-black font-bold">
+            <a href="#inicio" className="text-black font-bold">
               M
             </a>
           </div>
           <nav className="flex items-center space-x-4 text-2xl font-normal">
-            <a href="/" className="nav-link">
+            <a href="#inicio" className="nav-link">
               Inicio
             </a>
-            <a href="/sobre-mim" className="nav-link">
+            <a href="#sobre-mim" className="nav-link">
               Sobre Mim
             </a>
-            <a href="/projetos" className="nav-link">
+            <a href="#projetos" className="nav-link">
               Projetos
             </a>
-            <a href="/contato" className="nav-link">
+            <a href="#contato" className="nav-link">
               Contato
             </a>
           </nav>
         </header>
         <main className="text-black flex flex-col justify-center md:p-64 gap-8">
-          <section className="items-center mb-80 w-90 h-90">
+          <section id="inicio" className="items-center mb-80 w-90 h-90">
             <h1 className="space-y-4 mb-8 mt-48">
               <p className="text-5xl">Olá.</p>
               <p className="text-5xl w-auto font-bold">
@@ -45,8 +126,6 @@ export default function Home() {
               </p>
             </div>
             <div className="flex gap-4">
-              {" "}
-              {/* Movido para abaixo do texto */}
               <a
                 href="https://github.com/matalvesdev"
                 target="_blank"
@@ -71,10 +150,10 @@ export default function Home() {
             </div>
           </section>
 
-          <section className="flex items-center justify-end mb-80 w-auto">
+          <section id="sobre-mim" className="flex items-center justify-end mb-80 w-auto">
             <div className="pr-28">
               <img
-                src="https://media.licdn.com/dms/image/D4D03AQHRJb9dhmeExw/profile-displayphoto-shrink_200_200/0/1704743547667?e=1723075200&v=beta&t=iSS8sZxM9lwTFn-k2wptQSuCg37kYwAAnkfaP3AmQLU"
+                src="https://i.imgur.com/i7akQf1.jpeg"
                 alt="Profile-Pic"
                 className="w-96 h-96 rounded-full"
               />
@@ -123,11 +202,9 @@ export default function Home() {
             </div>
           </section>
 
-          <section className="mb-80">
+          <section id="sobre-mim" className="mb-80">
             <div className="">
               <div className="grid grid-cols-2 gap-20 mb-4 items-start text-2xl">
-                {" "}
-                {/* Ajuste o espaçamento para gap-20 */}
                 <div className="flex flex-col gap-4">
                   <h2 className="font-bold">Experiência:</h2>
                   <p className="font-bold">
@@ -184,13 +261,21 @@ export default function Home() {
             </div>
           </section>
 
-          <section className="mb-80">
+          <section id="projetos" className="mb-80">
             <div className="flex items-center">
-              <h1 className="mb-10 text-5xl flex font-semibold">Projetos</h1>
+              <h1 className="mb-10 text-5xl font-semibold">
+                Projetos recentes
+              </h1>
+            </div>
+            <div className="grid grid-cols-1 gap-10">
+            <h3 className="text-2xl font-semibold">Portifólio Web - 2024</h3>
+              {projects.map((project, index) => (
+                <ProjectDialog key={index} project={project} />
+              ))}
             </div>
           </section>
 
-          <section className="grid grid-cols-3 gap-2">
+          <section  id="contato" className="grid grid-cols-3 gap-2">
             <div className="col-span-3 flex items-center">
               <h1 className="mb-10 text-5xl font-semibold">Contato</h1>
             </div>
@@ -240,7 +325,6 @@ export default function Home() {
           <p className="">
             Copyright © 2024 Mateus Alves. Todos os direitos reservados.
           </p>
-
           <p className="">
             Precisa de um Desenvolvedor Web? Entre em contato comigo.
           </p>
