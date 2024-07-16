@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/dialog";
 import React from "react";
 
+
 interface Project {
   name: string;
   description: string;
@@ -152,11 +153,7 @@ export default function Home() {
 
           <section id="sobre-mim" className="flex items-center justify-end mb-80 w-auto">
             <div className="pr-28">
-              <img
-                src="https://i.imgur.com/i7akQf1.jpeg"
-                alt="Profile-Pic"
-                className="w-96 h-96 rounded-full"
-              />
+              <img src="/profile.jpg" alt="Profile-Pic" className="w-96 h-96 rounded-full" />
             </div>
             <div className="space-y-6 flex flex-col">
               <h1 className="mb-4 text-5xl">Quem sou eu?</h1>
