@@ -24,7 +24,7 @@ const projects: Project[] = [
     description:
       "Portfólio pessoal, criado com NextJS e TailwindCSS para estilização, além do uso do shadcn/UI para componentizar alguns elementos.",
     stack: ["NextJS", "TailwindCSS", "Shadcn/UI"],
-    image: "https:i.imgur.com/cG5ySfO.jpeg",
+    image: "https://i.imgur.com/cG5ySfO.jpeg",
     githubLink: "https:github.com/matalvesdev/portifolio-web",
   },
   {
