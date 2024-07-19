@@ -192,7 +192,7 @@ export default function Home() {
             </div>
             <div className="flex gap-4 mt-4">
               <a
-                href="https:github.com/matalvesdev"
+                href="https://github.com/matalvesdev"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-500 hover:text-black transition-colors"
@@ -200,7 +200,7 @@ export default function Home() {
                 <Github className="cursor-pointer" />
               </a>
               <a
-                href="https:www.linkedin.com/in/matfalves/"
+                href="https://www.linkedin.com/in/matfalves/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-500 hover:text-black transition-colors"
@@ -249,7 +249,7 @@ export default function Home() {
               </div>
               <div className="flex gap-4">
                 <a
-                  href="https:github.com/matalvesdev"
+                  href="https://github.com/matalvesdev"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-500 hover:text-black transition-colors"
@@ -257,7 +257,7 @@ export default function Home() {
                   <Github className="cursor-pointer" />
                 </a>
                 <a
-                  href="https:www.linkedin.com/in/matfalves/"
+                  href="https://www.linkedin.com/in/matfalves/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-500 hover:text-black transition-colors"
@@ -313,7 +313,7 @@ export default function Home() {
                   </p>
                   <div className="flex gap-2 mt-4">
                     <a
-                      href="https:github.com/matalvesdev"
+                      href="https://github.com/matalvesdev"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-gray-500 hover:text-black transition-colors"
@@ -321,7 +321,7 @@ export default function Home() {
                       <Github className="cursor-pointer" />
                     </a>
                     <a
-                      href="https:www.linkedin.com/in/matfalves/"
+                      href="https://www.linkedin.com/in/matfalves/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-gray-500 hover:text-black transition-colors"
@@ -393,7 +393,7 @@ export default function Home() {
                 <span>mateusalvesbassanelli@gmail.com</span>
               </a>
               <a
-                href="https:www.linkedin.com/in/matfalves/"
+                href="https://www.linkedin.com/in/matfalves/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2"
@@ -423,7 +423,7 @@ export default function Home() {
         </p>
         <div className="flex gap-4">
           <a
-            href="https:github.com/matalvesdev"
+            href="https://github.com/matalvesdev"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-500 hover:text-black transition-colors"
@@ -431,7 +431,7 @@ export default function Home() {
             <Github className="cursor-pointer" />
           </a>
           <a
-            href="https:www.linkedin.com/in/matfalves/"
+            href="https://www.linkedin.com/in/matfalves/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-500 hover:text-black transition-colors"
